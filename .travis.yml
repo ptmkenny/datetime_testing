@@ -30,6 +30,8 @@ before_install:
 
 install:
   # Build Drupal and add the package under test as a dependency.
+  - mkdir module
+  - cp -R *.* module
   - cd $BUILD_DIR
   - composer install
 
