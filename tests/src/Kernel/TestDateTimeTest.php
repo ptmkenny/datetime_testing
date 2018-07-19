@@ -13,6 +13,15 @@ use Drupal\KernelTests\KernelTestBase;
 class TestDateTimeTest extends KernelTestBase {
 
   /**
+   * Modules to install.
+   *
+   * @var array
+   */
+  public static $modules = [
+    'datetime_testing',
+  ];
+
+  /**
    * Test construction of TestDateTime objects.
    *
    * @param string $timeString

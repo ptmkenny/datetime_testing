@@ -18,6 +18,15 @@ use Drupal\datetime_testing\TestTime;
 class UnpinnedTimeTest extends KernelTestBase {
 
   /**
+   * Modules to install.
+   *
+   * @var array
+   */
+  public static $modules = [
+    'datetime_testing',
+  ];
+
+  /**
    * The normal time class.
    *
    * @var \Drupal\Component\Datetime\Time
