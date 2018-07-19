@@ -2,7 +2,6 @@
 
 namespace Drupal\Tests\datetime_testing\Kernel;
 
-use Drupal\Core\Datetime\DrupalDateTime;
 use Drupal\Component\Datetime\DateTimePlus;
 use Drupal\KernelTests\KernelTestBase;
 use Drupal\Tests\datetime_testing\Kernel\TestTestDateTime;
@@ -319,27 +318,6 @@ class TestDateTimeTest extends KernelTestBase {
         'timezone' => 'UTC',
         'currentTime' => $this->readToStamp('2017-03-12 03:04:05'),
         'expected' => $this->readToStamp('2017-03-12 03:04:05'),
-      ],
-    ];
-  }
-
-  /**
-   * Provides data for date construction tests.
-   *
-   * @return array
-   *   An array of arrays, each containing the input parameters for
-   *   TestDateTimeTest::testConstruct().
-   *
-   * @see TestDateTimeTest::testConstruct()
-   */
-  public function providerTestDebug() {
-    return [
-      // Relative time when current time after midday.
-       [
-        'timeString' => '+2 hours',
-        'timezone' => 'UTC',
-        'currentTime' => $this->readToStamp('2017-03-12 13:04:05'),
-        'expected' => $this->readToStamp('2017-03-12 15:04:05'),
       ],
     ];
   }

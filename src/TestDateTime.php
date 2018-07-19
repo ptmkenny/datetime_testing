@@ -110,11 +110,12 @@ class TestDateTime extends DrupalDatetime {
   }
 
   /**
-   * Sets the weekday Undocumented function
+   * Sets the weekday.
    *
-   * @param [type] $date
-   * @param [type] $weekday
-   * @return void
+   * @param \Datetime $date
+   * @param string $weekday
+   *
+   * @return \Datetime
    */
   protected function setWeekday(&$date, $weekday) {
     $timeString = $date->format('H') . 'hours' . $date->format('i') . 'minutes' . $date->format('s') . 'seconds';

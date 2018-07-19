@@ -49,14 +49,12 @@ class TestTime implements TestTimeInterface {
       $timeObject = new TestDateTime($time, NULL, $settings);
       $time = $timeObject->getTimestamp();
     }
-    $oldTime = $this->state->get('datetime_testing.specified_time');
-    $currentTime = $this->realTime->getCurrentTime();
+
     $this->state->set('datetime_testing.specified_time', $time);
     if ($this->state->get('datetime_testing.time_passing') !== FALSE) {
       $this->state
         ->set('datetime_testing.time_started', $this->realTime->getCurrentMicroTime());
     }
-    $now = $this->getCurrentMicroTime();
   }
 
   /**

@@ -79,7 +79,7 @@ class PinnedTimeTest extends KernelTestBase {
       ->method('getCurrentRequest')
       ->willReturn($request);
 
-      $this->testTime->resetTime();
+    $this->testTime->resetTime();
   }
 
   /**
@@ -169,7 +169,6 @@ class PinnedTimeTest extends KernelTestBase {
   /**
    * Tests the setTime method with a string.
    */
-
   public function testSetTimeString() {
     $seconds = 2000000;
     $this->testTime->setTime("1970-01-24 03:33:20 UTC");

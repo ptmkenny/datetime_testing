@@ -16,10 +16,5 @@
     "issues": "https://www.drupal.org/project/issues/datetime_testing",
     "source": "http://cgit.drupalcode.org/datetime_testing"
   },
-  "require": {},
-  "require-dev": {
-    "behat/mink": "1.7.x-dev",
-    "behat/mink-goutte-driver": "^1.2",
-    "phpunit/phpunit": "^4.8.35 || ^6.1"
-  }
+  "require": {}
 }
