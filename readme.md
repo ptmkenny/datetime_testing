@@ -22,6 +22,8 @@ It provides the following:
  * A drop-in replacement for DrupalDateTime (and thus PHP's \Datetime) is
    offered, which respects the current time reported by datetime.time when
    interpreting strings as datetimes.
+ * A subcontext for the Drupal Extension for Behat, allowing scenario steps like
+   `Given the time is 12pm` or `When "1 hour" passes`.
 
 This is particularly intended to be helpful when writing functional tests,
 because the decorated time service uses Drupal's state API to persist manipuated
@@ -31,7 +33,8 @@ tests but not for functional tests.
 USAGE
 ------------
 
-This is an API-module for developers; it has no effect without custom code.
+This is an API-module for developers; it has no useful effect without custom
+code.
 
 ```
 
@@ -69,7 +72,9 @@ echo \Drupal::time()->getCurrentTime();
 ```
 
 See \Drupal\datetime_testing\TestTimeInterface and other classes for further
-code documentation.
+API documentation.
+
+See features/time.feature for examples of Behat step syntax.
 
 REQUIREMENTS
 ------------
@@ -81,10 +86,24 @@ INSTALLATION
 
 Install as you would normally install a contributed Drupal module.
 
+This module is for testing purposes only. It should not be installed on
+production sites as it may slow performance.
+
 CONFIGURATION
 -------------
 
-There is nothing to configure.
+In order to use the Behat steps in the provided subcontext, indicate the path
+to search for the subcontext in your project's behat.yml file:
+
+```
+Drupal\DrupalExtension:
+  subcontexts:
+    paths:
+      - "/app/web/modules/contrib/datetime_testing"
+```
+
+You do not need to declare the subcontext under the `contexts` key of behat.yml.
+
 
 MAINTAINERS
 -----------
