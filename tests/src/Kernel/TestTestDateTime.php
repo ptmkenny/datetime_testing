@@ -11,7 +11,6 @@ use Drupal\datetime_testing\TestDateTime;
  */
 class TestTestDateTime extends TestDateTime {
 
-
   /**
    * The current time.
    *

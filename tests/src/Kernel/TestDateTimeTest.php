@@ -5,6 +5,7 @@ namespace Drupal\Tests\datetime_testing\Kernel;
 use Drupal\Core\Datetime\DrupalDateTime;
 use Drupal\Component\Datetime\DateTimePlus;
 use Drupal\KernelTests\KernelTestBase;
+use Drupal\Tests\datetime_testing\Kernel\TestTestDateTime;
 
 /**
  * @coversDefaultClass \Drupal\datetime_testing\TestDateTime
