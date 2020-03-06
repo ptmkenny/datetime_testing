@@ -1,0 +1,6 @@
+services:
+  oe_theme_mock_request_time.commands:
+    class: Drupal\datetime_testing\Commands\TestTimeCommands
+    arguments: ['@datetime_testing.test_time']
+    tags:
+      - { name: drush.command }

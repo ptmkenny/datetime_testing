@@ -104,6 +104,15 @@ Drupal\DrupalExtension:
 
 You do not need to declare the subcontext under the `contexts` key of behat.yml.
 
+DRUSH COMMANDS
+--------------
+
+The module provides the following Drush commands:
+
+- `datetime-testing:set`: set test time, must be expressed in the following format `Y-m-d H:i:s`.
+- `datetime-testing:get`: get current time.
+- `datetime-testing:freeze`: freeze time.
+- `datetime-testing:unfreeze`: unfreeze time.
 
 MAINTAINERS
 -----------
