@@ -61,7 +61,9 @@ class DatetimeTestingContext extends DrupalSubContextBase implements DrupalSubCo
    */
   public function resetTime(AfterScenarioScope $scope) {
     $this->getDriver();
-    \Drupal::time()->resetTime();
+    if (\Drupal::moduleHandler()->moduleExists('datetime_testing')) {
+      \Drupal::time()->resetTime();
+    }
   }
 
 }
