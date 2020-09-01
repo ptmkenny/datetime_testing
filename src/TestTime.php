@@ -119,7 +119,12 @@ class TestTime implements TestTimeInterface {
    * {@inheritdoc}
    */
   public function getRequestTime() {
-    return (int) $this->getRequestMicroTime();
+    // In theory we should be able to use getRequestMicroTime to get the same
+    // result but getting micro time on kernel tests is not possible at the
+    // moment. See https://www.drupal.org/project/drupal/issues/3168449
+    // for more info.
+    $requestLag = $this->realTime->getCurrentTime() - $this->realTime->getRequestTime();
+    return $this->getCurrentTime() - $requestLag;
   }
 
   /**
